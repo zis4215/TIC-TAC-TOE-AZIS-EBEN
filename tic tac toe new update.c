@@ -39,6 +39,7 @@ int main()
 {
 	do {
 		printf("	======================================================================\n\n\n 			SELAMAT DATANG DI GAME TIC TAC TOE AE\n\n\n[1] Mulai	[2] Keluar	[3] Cara Bermain	 [4] Tentang\n\n\nPilihan Anda : ");
+
 		scanf("%i",&p);
 
 		system("cls");
@@ -86,13 +87,13 @@ void papan()
 }
 
 void mode(){
-	printf("*#*#=================================================*#*#\n\n\n Pilih Mode Permainan\n\n[1] VS P	[2] VS AI\n\nPilihan Anda : ");
+printf("*#*#=================================================*#*#\n\n\n Pilih Mode Permainan\n\n[1] VS P	[2] VS AI\n\nPilihan Anda : ");
 	scanf("%i",&r);
 	system("cls");
 	switch (r)
 	{
 		case 1 :
-			printf("*#*#=================================================*#*#\n\n\nPilih Skor Maks\n\n[1] 3	[2] 5	[3] 7\n\nPilihan Anda : ");
+			printf("*#*#=================================================*#*#\n\n\nPilih Berapa kali anda ingin bermain\n\n[1] 3	[2] 5	[3] 7\n\nPilihan Anda : ");
 			scanf("%i",&t);
 			switch(t){
                 case 1: t = 3; break;
@@ -103,8 +104,7 @@ void mode(){
 			break;
 
 		case 2 :
-			printf("*#*#=================================================*#*#\n\n\nPilih Level Permainan\n\n[1] VS P	[2] VS AI\n\nPilihan Anda : ");
-			scanf("%i",&t);
+			printf("*#*#=================================================*#*#\n\n\nPilih Level Permainan\n\n[1] Mudah	[2] Sedang	[3] Sulit\n\nPilihan Anda : ");
 			system("cls");
 			break;
 	}
@@ -192,8 +192,16 @@ void help(){
 	char pilihan='N';
 	do{
 	system("cls");
-	printf (" Mainkan aja \n\n\n");
-		printf("Masukan Y untuk kembali : ");
+	printf("Besar papan permainan berukuran 3x3  dengan deret kemenangan 3.Papan 5x5 dengan deret 4, papan 7x7 dengan deret 5 \n");
+	printf("Pemain dalam permainan ini dibatasi untuk satu lawan satu, dilakukan bergiliran antara pemain pertama dan pemain kedua.\n");
+	printf("Untuk memberikan langkah, setiap pemain harus mengisi bidak dengan simbol pemain masing-masing, biasanya X atau O.\n");
+	printf("Setiap pemain hanya mempunyai satu kali kesempatan pada setiap giliran.\n");
+	printf("Bidak yang sudah terisi tidak bisa ditimpa oleh langkah berikutnya.\n");
+	printf("Langkah yang sudah diambil tidak dapat dibatalkan atau diganti dengan langkah yang lain.\n");
+	printf("Setiap pemain diberikan waktu 10 detik, jika melewati batas, maka akan dilanjutkan oleh pemain lain.\n");
+	printf("Tujuan dari game ini adalah untuk mendapatkan deret dengan tiga simbol atau lebih yang sama secara horizontal, vertikal atau  diagonal.\n");
+	printf("Pemenang ditentukan oleh pemain yang pertama kali menyusun deret tersebut.\n");
+	printf("\n Masukan Y untuk kembali : ");
 		scanf("%c",&pilihan);
 	}while(tolower(pilihan) != 'y');
 }
@@ -203,19 +211,16 @@ void about(){
 
 	do{
 		system("cls");
-		printf("||===========   About   ===========||\n");
-		printf("||                                 ||\n");
-		printf("||                                 ||\n");
-		printf("||                                 ||\n");
-		printf("||                                 ||\n");
-		printf("||=================================||\n\n\n");
-		printf("Masukan Y untuk kembali : ");
+		printf("||===========   About   ===========||\n\n\n ");
+		printf(" Game ini dibuat oleh Aziz Surohman dan Eben Ezer Napitu dari 1B-D4 Teknik Informatika Politeknik Negeri Bandung dalam rangka penugasan untuk nilai UAS. Game ini juga mengambik sumber dari internet yang dimodifikasi.");
+	
+		printf("\n\nMasukan Y untuk kembali : ");
 		scanf("%c",&pilihan);
 	}while(tolower(pilihan) != 'y');
 }
 
 void grid1 (){
-    int player = 1, i, choice, t;
+    int player = 1, i, choice, ti;
     double waktuInput;
     skor1 = 0;
     skor2 = 0;
@@ -227,11 +232,11 @@ void grid1 (){
             board();
             player = (player % 2) ? 1 : 2;
 
-            t=StartTime();
+            ti=StartTime();
             printf("Player %d, enter a number:  ", player);
             scanf("%d", &choice);
-            t=EndTime()-t;
-            waktuInput=((double)t)/CLOCKS_PER_SEC;
+            ti=EndTime()-ti;
+            waktuInput=((double)ti)/CLOCKS_PER_SEC;
 
             mark = (player == 1) ? 'X' : 'O';
 
@@ -271,7 +276,7 @@ void grid1 (){
                     getch();
                 }
             } else {
-                printf("Waktu Habis BEN !!!");
+                printf("Waktu Habis hehe :)");
                 getch();
             }
 
@@ -285,10 +290,10 @@ void grid1 (){
         player--;
         if (i == 1){
             printf("==>\aPlayer %d win ",player);
+            getch();
             if(player==1){
                  skor1++;
             }
-
             else{
                 skor2++;
             }
@@ -298,14 +303,13 @@ void grid1 (){
         }
         board();
         resetGrid();
-        getch();
 
     }while(skor1!=t && skor2!=t);
 
     return 0;
 }
 
-/***************/
+/*********************************************/
 int checkwin()
 {
     if (square[1] == square[2] && square[2] == square[3])
@@ -342,9 +346,9 @@ int checkwin()
 }
 
 
-/***********************
+/*******************************************************************
 FUNCTION TO DRAW BOARD OF TIC TAC TOE WITH PLAYERS MARK
- ************************/
+ ********************************************************************/
 
 void board()
 {
@@ -382,7 +386,20 @@ void resetGrid(){
 
 }
 
-
-/***********************
+/*******************************************************************
 END OF PROJECT
- ************************/ 
+ ********************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
