@@ -212,7 +212,7 @@ void about(){
 	do{
 		system("cls");
 		printf("||===========   About   ===========||\n\n\n ");
-		printf(" Game ini dibuat oleh Aziz Surohman dan Eben Ezer Napitu dari 1B-D4 Teknik Informatika Politeknik Negeri Bandung dalam rangka penugasan untuk nilai UAS. Game ini juga mengambik sumber dari internet yang dimodifikasi.");
+		printf(" Game ini dibuat oleh Azis Surohman dan Eben Ezer Napitu dari 1B-D4 Teknik Informatika Politeknik Negeri Bandung dalam rangka penugasan untuk nilai UAS. Game ini juga mengambik sumber dari internet yang dimodifikasi.");
 	
 		printf("\n\nMasukan Y untuk kembali : ");
 		scanf("%c",&pilihan);
