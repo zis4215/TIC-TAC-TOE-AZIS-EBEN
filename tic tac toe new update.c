@@ -14,6 +14,8 @@ void help();
 void grid1();
 void grid2();
 void grid3();
+void rounde ();
+void level ();
 void resetGrid();
 int p, q, r, s,u,t;
 int skor1, skor2;
@@ -93,7 +95,28 @@ printf("*#*#=================================================*#*#\n\n\n Pilih Mo
 	switch (r)
 	{
 		case 1 :
-			printf("*#*#=================================================*#*#\n\n\nPilih Berapa kali anda ingin bermain\n\n[1] 3	[2] 5	[3] 7\n\nPilihan Anda : ");
+			rounde();
+			break;
+	//		printf("*#*#=================================================*#*#\n\n\nPilih Berapa kali anda ingin bermain\n\n[1] 3	[2] 5	[3] 7\n\nPilihan Anda : ");
+	//		scanf("%i",&t);
+	//		switch(t){
+    //          case 1: t = 3; break;
+    //          case 2: t = 5; break;
+    //          case 3: t = 7; break;
+	//		}
+	//		system("cls");
+	//		break;
+
+		case 2 :
+			level();
+	//		printf("*#*#=================================================*#*#\n\n\nPilih Level Permainan\n\n[1] Mudah	[2] Sedang	[3] Sulit\n\nPilihan Anda : ");
+	//		system("cls");
+			break;
+	}
+
+}
+void rounde (){
+printf("*#*#=================================================*#*#\n\n\nPilih Berapa kali anda ingin bermain\n\n[1] 3	[2] 5	[3] 7\n\nPilihan Anda : ");
 			scanf("%i",&t);
 			switch(t){
                 case 1: t = 3; break;
@@ -101,14 +124,10 @@ printf("*#*#=================================================*#*#\n\n\n Pilih Mo
                 case 3: t = 7; break;
 			}
 			system("cls");
-			break;
-
-		case 2 :
-			printf("*#*#=================================================*#*#\n\n\nPilih Level Permainan\n\n[1] Mudah	[2] Sedang	[3] Sulit\n\nPilihan Anda : ");
-			system("cls");
-			break;
-	}
-
+			}
+void level(){
+	printf("*#*#=================================================*#*#\n\n\nPilih Level Permainan\n\n[1] Mudah	[2] Sedang	[3] Sulit\n\nPilihan Anda : ");
+		system("cls");
 }
 //void grid1 (){
 //			printf("||===========||===========||===========||\n");
@@ -212,7 +231,7 @@ void about(){
 	do{
 		system("cls");
 		printf("||===========   About   ===========||\n\n\n ");
-		printf(" Game ini dibuat oleh Azis Surohman dan Eben Ezer Napitu dari 1B-D4 Teknik Informatika Politeknik Negeri Bandung dalam rangka penugasan untuk nilai UAS. Game ini juga mengambik sumber dari internet yang dimodifikasi.");
+		printf(" Game ini dibuat oleh Aziz Surohman dan Eben Ezer Napitu dari 1B-D4 Teknik Informatika Politeknik Negeri Bandung dalam rangka penugasan untuk nilai UAS. Game ini juga mengambik sumber dari internet yang dimodifikasi.");
 	
 		printf("\n\nMasukan Y untuk kembali : ");
 		scanf("%c",&pilihan);
@@ -389,6 +408,7 @@ void resetGrid(){
 /*******************************************************************
 END OF PROJECT
  ********************************************************************/
+
 
 
 
