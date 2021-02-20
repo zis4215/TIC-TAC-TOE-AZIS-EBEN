@@ -20,36 +20,30 @@ void menu();
 void about();
 void help();
 
-//menampilkan papan
+
 int grid1();
 int grid3();
 int grid2();
-//gamplay mode
+
 void board();
 void board2();
 void board3();
-
-char square[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-char bidak [26]= {'.','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y' };
-char papan[50];
-void isi3();
-
 void rounde();
 void level();
-
-//Modul mereset papan yang sudah di gunakan
 void resetGrid();
 void resetGrid2();
-void resetGrid3();
 
-//modul cek win
-int cekwin5();
-int cekwin3();
-int checkwin();
-//variabel 
 int p, q, r, s,u,t;
 int skor1, skor2;
+char square[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+char bidak [26]= {'.','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y' };
+int cekwin5();
 
+char papan[50];
+void resetGrid3();
+void isi3();
+int cekwin3();
+int checkwin();
 
 //Begin
 int main()
@@ -116,6 +110,9 @@ void about(){
 		scanf("%c",&pilihan);
 	}while(tolower(pilihan) != 'y');
 }
+
+
+
 
 //Modul Pemilihan Mode
 void mode(){
@@ -195,7 +192,45 @@ int EndTime() {
     return endInput;
 }
 
-//* MODE 3x3 *//
+
+
+
+
+
+
+
+void board2() {
+	system("cls");			// untuk membersihkan layar
+	printf("\n\n\tTic Tac Toe\n\n");  
+	printf("Player 1 (X)  -  Player 2 (O)\n\n\n"); // sebagai penanda player mana yang X atau O
+	printf("Skor Player 1 (X) : %d -  Skor Player 2 (O) : %d\n\n\n", skor1, skor2);    // menampilkan skor pemain
+	printf("=======================   PAPAN PERMAINAN   =======================\n\n");
+	printf("||===========||===========||===========||===========||===========||\n");
+	printf("||           ||           ||           ||           ||           ||\n");
+	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n",bidak[1],bidak[2],bidak[3],bidak[4],bidak[5]);
+	printf("||           ||           ||           ||           ||           ||\n");
+	printf("||===========||===========||===========||===========||===========||\n");
+	printf("||           ||           ||           ||           ||           ||\n");
+	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n",bidak[6],bidak[7],bidak[8],bidak[9],bidak[10]);
+	printf("||===========||===========||===========||===========||===========||\n");
+	printf("||           ||           ||           ||           ||           ||\n");
+	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n",bidak[11],bidak[12],bidak[13],bidak[14],bidak[15]);
+	printf("||           ||           ||           ||           ||           ||\n");
+	printf("||===========||===========||===========||===========||===========||\n");
+	printf("||           ||           ||           ||           ||           ||\n");
+	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n",bidak[16],bidak[17],bidak[18],bidak[19],bidak[20]);
+	printf("||           ||           ||           ||           ||           ||\n");
+	printf("||===========||===========||===========||===========||===========||\n");
+	printf("||           ||           ||           ||           ||           ||\n");
+	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n",bidak[21],bidak[22],bidak[23],bidak[24],bidak[25]);
+	printf("||           ||           ||           ||           ||           ||\n");
+	printf("||===========||===========||===========||===========||===========||\n\n\n");
+}
+
+
+
+
+
 int grid1 (){
     int player = 1, i, choice, ti;
     double waktuInput;
@@ -286,7 +321,7 @@ int grid1 (){
     return 0;
 }
 
-//cek pemenang 3x3
+/*********************************************/
 int checkwin()
 {
     if (square[1] == square[2] && square[2] == square[3])
@@ -321,7 +356,11 @@ int checkwin()
         return  - 1;
 }
 
-//print papan permainan 3x3
+
+/*******************************************************************
+FUNCTION TO DRAW BOARD OF TIC TAC TOE WITH PLAYERS MARK
+ ********************************************************************/
+
 void board()
 {
     system("cls");
@@ -347,7 +386,6 @@ void board()
     printf("     |     |     \n\n");
 }
 
-//Reset papan 3x3
 void resetGrid(){
     char c='0';
     int i;
@@ -356,12 +394,94 @@ void resetGrid(){
         square[i]=c;
         c++;
     }
+
+}
+void resetGrid2(){
+	char c='a';
+    int i;
+
+    for(i=1; i<26; i++){
+        bidak[i]=c;
+        c++;
+
+
+}}
+
+/*******************************************************************
+END OF PROJECT
+ ********************************************************************/
+int cekwin5(){
+	if (bidak[1]==bidak[2]&&bidak[2]==bidak[3]&&bidak[3]==bidak[4])
+		return 1;
+	else if (bidak[2]==bidak[3]&&bidak[3]==bidak[4]&&bidak[4]==bidak[5])
+		return 1;
+	else if (bidak[6]==bidak[7]&&bidak[7]==bidak[8]&&bidak[8]==bidak[9])
+		return 1;
+	else if (bidak[7]==bidak[8]&&bidak[8]==bidak[9]&&bidak[9]==bidak[10])
+		return 1;
+	else if (bidak[11]==bidak[12]&&bidak[12]==bidak[13]&&bidak[13]==bidak[14])
+		return 1;
+	else if (bidak[12]==bidak[13]&&bidak[13]==bidak[14]&&bidak[14]==bidak[15])
+		return 1;
+	else if (bidak[16]==bidak[17]&&bidak[17]==bidak[18]&&bidak[18]==bidak[19])
+		return 1;
+	else if (bidak[17]==bidak[18]&&bidak[18]==bidak[19]&&bidak[19]==bidak[20])
+		return 1;
+	else if (bidak[21]==bidak[22]&&bidak[22]==bidak[23]&&bidak[23]==bidak[24])
+		return 1;
+	else if (bidak[22]==bidak[23]&&bidak[23]==bidak[24]&&bidak[24]==bidak[25])
+		return 1;
+	else if (bidak[4]==bidak[8]&&bidak[8]==bidak[12]&&bidak[12]==bidak[16])
+		return 1;
+	else if (bidak[21]==bidak[17]&&bidak[17]==bidak[13]&&bidak[13]==bidak[9])
+		return 1;
+	else if (bidak[17]==bidak[13]&&bidak[13]==bidak[9]&&bidak[9]==bidak[5])
+		return 1;
+	else if (bidak[22]==bidak[18]&&bidak[18]==bidak[14]&&bidak[14]==bidak[10])
+		return 1;
+	else if (bidak[1]==bidak[6]&&bidak[6]==bidak[11]&&bidak[11]==bidak[16])
+		return 1;
+	else if (bidak[6]==bidak[11]&&bidak[11]==bidak[16]&&bidak[16]==bidak[21])
+		return 1;
+	else if (bidak[2]==bidak[7]&&bidak[7]==bidak[12]&&bidak[12]==bidak[17])
+		return 1;
+	else if (bidak[7]==bidak[12]&&bidak[12]==bidak[17]&&bidak[17]==bidak[22])
+		return 1;
+	else if (bidak[3]==bidak[8]&&bidak[8]==bidak[13]&&bidak[13]==bidak[18])
+		return 1;
+	else if (bidak[8]==bidak[13]&&bidak[13]==bidak[18]&&bidak[18]==bidak[23])
+		return 1;
+	else if (bidak[4]==bidak[9]&&bidak[9]==bidak[14]&&bidak[14]==bidak[19])
+		return 1;
+	else if (bidak[9]==bidak[14]&&bidak[14]==bidak[19]&&bidak[19]==bidak[24])
+		return 1;
+	else if (bidak[5]==bidak[10]&&bidak[10]==bidak[15]&&bidak[15]==bidak[20])
+		return 1;
+	else if (bidak[10]==bidak[15]&&bidak[15]==bidak[19]&&bidak[20]==bidak[25])
+		return 1;
+	else if (bidak[6]==bidak[12]&&bidak[12]==bidak[18]&&bidak[18]==bidak[14])
+		return 1;
+	else if (bidak[1]==bidak[7]&&bidak[7]==bidak[13]&&bidak[15]==bidak[19])
+		return 1;
+	else if (bidak[7]==bidak[13]&&bidak[13]==bidak[19]&&bidak[19]==bidak[25])
+		return 1;
+	else if (bidak[2]==bidak[8]&&bidak[8]==bidak[14]&&bidak[14]==bidak[20])
+		return 1;
+		else if (bidak[1] != 'a' && bidak[2] != 'b' && bidak[3] != 'c'
+		&& bidak[4] != 'd' && bidak[5] != 'e' && bidak[6] != 'f'
+	&& bidak[7] != 'g' && bidak[8] != 'h' && bidak[9] != 'i' && bidak[10] != 'j'
+		&& bidak[11] != 'k' && bidak[12] != 'l' && bidak[13] != 'm' && bidak[14] != 'n'
+		&& bidak[15] != 'o' && bidak[16] != 'p' && bidak[17] != 'q' && bidak[18] != 'r'
+		&& bidak[19] != 's' && bidak[20] != 't' && bidak[21] != 'u' && bidak[22] != 'v'
+		&& bidak[23] != 'w' && bidak[24] != 'x' && bidak[25] != 'y')
+
+    return 0;
+    else
+        return  - 1;
+
 }
 
-
-//* MODE 5x5 *//
-
-int grid2(){		// untuk memainkan game 5x5
+int grid2(){
 	int player = 1, i, ti;
     double waktuInput;
     skor1 = 0;
@@ -476,120 +596,6 @@ int grid2(){		// untuk memainkan game 5x5
 
     return 0;
 }
-
-//cek pemenang 5x5
-int cekwin5(){   //cek win papan 5x5
-	if (bidak[1]==bidak[2]&&bidak[2]==bidak[3]&&bidak[3]==bidak[4])
-		return 1;
-	else if (bidak[2]==bidak[3]&&bidak[3]==bidak[4]&&bidak[4]==bidak[5])
-		return 1;
-	else if (bidak[6]==bidak[7]&&bidak[7]==bidak[8]&&bidak[8]==bidak[9])
-		return 1;
-	else if (bidak[7]==bidak[8]&&bidak[8]==bidak[9]&&bidak[9]==bidak[10])
-		return 1;
-	else if (bidak[11]==bidak[12]&&bidak[12]==bidak[13]&&bidak[13]==bidak[14])
-		return 1;
-	else if (bidak[12]==bidak[13]&&bidak[13]==bidak[14]&&bidak[14]==bidak[15])
-		return 1;
-	else if (bidak[16]==bidak[17]&&bidak[17]==bidak[18]&&bidak[18]==bidak[19])
-		return 1;
-	else if (bidak[17]==bidak[18]&&bidak[18]==bidak[19]&&bidak[19]==bidak[20])
-		return 1;
-	else if (bidak[21]==bidak[22]&&bidak[22]==bidak[23]&&bidak[23]==bidak[24])
-		return 1;
-	else if (bidak[22]==bidak[23]&&bidak[23]==bidak[24]&&bidak[24]==bidak[25])
-		return 1;
-	else if (bidak[4]==bidak[8]&&bidak[8]==bidak[12]&&bidak[12]==bidak[16])
-		return 1;
-	else if (bidak[21]==bidak[17]&&bidak[17]==bidak[13]&&bidak[13]==bidak[9])
-		return 1;
-	else if (bidak[17]==bidak[13]&&bidak[13]==bidak[9]&&bidak[9]==bidak[5])
-		return 1;
-	else if (bidak[22]==bidak[18]&&bidak[18]==bidak[14]&&bidak[14]==bidak[10])
-		return 1;
-	else if (bidak[1]==bidak[6]&&bidak[6]==bidak[11]&&bidak[11]==bidak[16])
-		return 1;
-	else if (bidak[6]==bidak[11]&&bidak[11]==bidak[16]&&bidak[16]==bidak[21])
-		return 1;
-	else if (bidak[2]==bidak[7]&&bidak[7]==bidak[12]&&bidak[12]==bidak[17])
-		return 1;
-	else if (bidak[7]==bidak[12]&&bidak[12]==bidak[17]&&bidak[17]==bidak[22])
-		return 1;
-	else if (bidak[3]==bidak[8]&&bidak[8]==bidak[13]&&bidak[13]==bidak[18])
-		return 1;
-	else if (bidak[8]==bidak[13]&&bidak[13]==bidak[18]&&bidak[18]==bidak[23])
-		return 1;
-	else if (bidak[4]==bidak[9]&&bidak[9]==bidak[14]&&bidak[14]==bidak[19])
-		return 1;
-	else if (bidak[9]==bidak[14]&&bidak[14]==bidak[19]&&bidak[19]==bidak[24])
-		return 1;
-	else if (bidak[5]==bidak[10]&&bidak[10]==bidak[15]&&bidak[15]==bidak[20])
-		return 1;
-	else if (bidak[10]==bidak[15]&&bidak[15]==bidak[19]&&bidak[20]==bidak[25])
-		return 1;
-	else if (bidak[6]==bidak[12]&&bidak[12]==bidak[18]&&bidak[18]==bidak[14])
-		return 1;
-	else if (bidak[1]==bidak[7]&&bidak[7]==bidak[13]&&bidak[15]==bidak[19])
-		return 1;
-	else if (bidak[7]==bidak[13]&&bidak[13]==bidak[19]&&bidak[19]==bidak[25])
-		return 1;
-	else if (bidak[2]==bidak[8]&&bidak[8]==bidak[14]&&bidak[14]==bidak[20])
-		return 1;
-		else if (bidak[1] != 'a' && bidak[2] != 'b' && bidak[3] != 'c'
-		&& bidak[4] != 'd' && bidak[5] != 'e' && bidak[6] != 'f'
-		&& bidak[7] != 'g' && bidak[8] != 'h' && bidak[9] != 'i' && bidak[10] != 'j'
-		&& bidak[11] != 'k' && bidak[12] != 'l' && bidak[13] != 'm' && bidak[14] != 'n'
-		&& bidak[15] != 'o' && bidak[16] != 'p' && bidak[17] != 'q' && bidak[18] != 'r'
-		&& bidak[19] != 's' && bidak[20] != 't' && bidak[21] != 'u' && bidak[22] != 'v'
-		&& bidak[23] != 'w' && bidak[24] != 'x' && bidak[25] != 'y')
-
-    return 0;
-    else
-        return  - 1;
-
-}
-
-// print papan 5x5
-void board2() {
-	system("cls");			// untuk membersihkan layar
-	printf("\n\n\tTic Tac Toe\n\n");  
-	printf("Player 1 (X)  -  Player 2 (O)\n\n\n"); // sebagai penanda player mana yang X atau O
-	printf("Skor Player 1 (X) : %d -  Skor Player 2 (O) : %d\n\n\n", skor1, skor2);    // menampilkan skor pemain
-	printf("=======================   PAPAN PERMAINAN   =======================\n\n");
-	printf("||===========||===========||===========||===========||===========||\n");
-	printf("||           ||           ||           ||           ||           ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n",bidak[1],bidak[2],bidak[3],bidak[4],bidak[5]);
-	printf("||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||\n");
-	printf("||           ||           ||           ||           ||           ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n",bidak[6],bidak[7],bidak[8],bidak[9],bidak[10]);
-	printf("||===========||===========||===========||===========||===========||\n");
-	printf("||           ||           ||           ||           ||           ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n",bidak[11],bidak[12],bidak[13],bidak[14],bidak[15]);
-	printf("||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||\n");
-	printf("||           ||           ||           ||           ||           ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n",bidak[16],bidak[17],bidak[18],bidak[19],bidak[20]);
-	printf("||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||\n");
-	printf("||           ||           ||           ||           ||           ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n",bidak[21],bidak[22],bidak[23],bidak[24],bidak[25]);
-	printf("||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||\n\n\n");
-}
-// Reset Papan 5x5
-void resetGrid2(){
-	char c='a';
-    int i;
-
-    for(i=1; i<26; i++){
-        bidak[i]=c;
-        c++;
-		}
-}
-
-
-//* MODE 7x7 *//
 int grid3(){    				// untuk memainkan game 7x7
 
 	int player = 1, i, ti;
@@ -756,10 +762,63 @@ int grid3(){    				// untuk memainkan game 7x7
     return 0;
 }
 
+void board3(){
+	
+	system("cls");
+					    printf("\n\n\tTic Tac Toe\n\n");
 
-//Cek pemenang 7x7
+   					 printf("Player 1 (X)  -  Player 2 (O)\n\n\n");  									// sebagai penanda player mana yang X atau O
+   					 printf("Skor Player 1 (X) : %d -  Skor Player 2 (O) : %d\n\n\n", skor1, skor2);		// untuk menampilkan skor palyer
+   					 
+			printf("====================================   PAPAN PERMAINAN   ====================================\n\n");
+			printf("||===========||===========||===========||===========||===========||===========||===========||\n");
+			printf("||1          ||2          ||3          ||4          ||5          ||6          ||7          ||\n");
+			printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"		// untuk menyimpan tanda X atau O
+			,papan[1],papan[2],papan[3],papan[4],papan[5],papan[6],papan[7]); 													
+			printf("||           ||           ||           ||           ||           ||           ||           ||\n");
+			printf("||===========||===========||===========||===========||===========||===========||===========||\n");
+			printf("||8          ||9          ||10         ||11         ||12         ||13         ||14         ||\n");
+			printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
+			,papan[8],papan[8],papan[10],papan[11],papan[12],papan[13],papan[14]);
+			printf("||           ||           ||           ||           ||           ||           ||           ||\n");
+			printf("||===========||===========||===========||===========||===========||===========||===========||\n");
+			printf("||15         ||16         ||17         ||18         ||19         ||29         ||21         ||\n");
+			printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
+			,papan[15],papan[16],papan[17],papan[18],papan[19],papan[20],papan[21]);
+			printf("||           ||           ||           ||           ||           ||           ||           ||\n");
+			printf("||===========||===========||===========||===========||===========||===========||===========||\n");
+			printf("||22         ||23         ||24         ||25         ||26         ||27         ||28         ||\n");
+			printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
+			,papan[22],papan[23],papan[24],papan[25],papan[26],papan[27],papan[28]);
+			printf("||           ||           ||           ||           ||           ||           ||           ||\n");
+			printf("||===========||===========||===========||===========||===========||===========||===========||\n");
+			printf("||29         ||30         ||31         ||32         ||33         ||34         ||35         ||\n");
+			printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
+			,papan[29],papan[30],papan[31],papan[32],papan[33],papan[34],papan[35]);
+			printf("||           ||           ||           ||           ||           ||           ||           ||\n");
+			printf("||===========||===========||===========||===========||===========||===========||===========||\n");
+			printf("||36         ||37         ||38         ||39         ||40         ||41         ||42         ||\n");
+			printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
+			,papan[36],papan[37],papan[38],papan[39],papan[40],papan[41],papan[42]);
+			printf("||           ||           ||           ||           ||           ||           ||           ||\n");
+			printf("||===========||===========||===========||===========||===========||===========||===========||\n");
+			printf("||43         ||44         ||45         ||46         ||47         ||48         ||49         ||\n");
+			printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
+			,papan[43],papan[44],papan[45],papan[46],papan[47],papan[48],papan[49]);
+			printf("||           ||           ||           ||           ||           ||           ||           ||\n");
+			printf("||===========||===========||===========||===========||===========||===========||===========||\n\n\n");
+
+		}
+void resetGrid3(){   //untuk mereset grid jika game pertama selesai
+    char c='_';
+    int i;
+
+    for(i=0; i<50; i++){
+        square[i]=c;
+    }
+}
 int cekwin3(){  // untuk mengecek kemenangan papan 7x7 secara horizontal, vertikal, atau diagonal
-	// baris1
+	// b1
 			if((papan[1]=='X'&&papan[2]=='X'&&papan[3]=='X'&&papan[4]=='X'&&papan[5]=='X') || 
 			(papan[1]=='O'&&papan[2]=='O'&&papan[3]=='O'&&papan[4]=='O'&&papan[5]=='O'))
 		return 1;
@@ -769,7 +828,7 @@ int cekwin3(){  // untuk mengecek kemenangan papan 7x7 secara horizontal, vertik
 			else if((papan[7]=='X'&&papan[6]=='X'&&papan[3]=='X'&&papan[4]=='X'&&papan[5]=='X') || 
 			(papan[7]=='O'&&papan[6]=='O'&&papan[3]=='O'&&papan[4]=='O'&&papan[5]=='O'))
 		return 1;
-	//baris2
+	//b2
 			else if((papan[8]=='X'&&papan[9]=='X'&&papan[10]=='X'&&papan[11]=='X'&&papan[12]=='X') || 
 			(papan[8]=='O'&&papan[9]=='O'&&papan[10]=='O'&&papan[11]=='O'&&papan[12]=='O'))
 		return 1;
@@ -779,7 +838,7 @@ int cekwin3(){  // untuk mengecek kemenangan papan 7x7 secara horizontal, vertik
 			else if((papan[13]=='X'&&papan[14]=='X'&&papan[10]=='X'&&papan[11]=='X'&&papan[12]=='X') || 
 			(papan[13]=='O'&&papan[14]=='O'&&papan[10]=='O'&&papan[11]=='O'&&papan[12]=='O'))
 		return 1;
-	//baris3
+	//b3
 			else if((papan[15]=='X'&&papan[16]=='X'&&papan[17]=='X'&&papan[18]=='X'&&papan[19]=='X') || 
 			(papan[15]=='O'&&papan[16]=='O'&&papan[17]=='O'&&papan[18]=='O'&&papan[19]=='O'))
 		return 1;
@@ -789,7 +848,7 @@ int cekwin3(){  // untuk mengecek kemenangan papan 7x7 secara horizontal, vertik
 			else if((papan[20]=='X'&&papan[21]=='X'&&papan[17]=='X'&&papan[18]=='X'&&papan[19]=='X') || 
 			(papan[20]=='O'&&papan[21]=='O'&&papan[17]=='O'&&papan[18]=='O'&&papan[19]=='O'))
 		return 1;
-	//baris4
+	//b4
 			else if((papan[22]=='X'&&papan[23]=='X'&&papan[24]=='X'&&papan[25]=='X'&&papan[26]=='X') || 
 			(papan[22]=='O'&&papan[23]=='O'&&papan[24]=='O'&&papan[25]=='O'&&papan[26]=='O'))
 		return 1;
@@ -799,7 +858,7 @@ int cekwin3(){  // untuk mengecek kemenangan papan 7x7 secara horizontal, vertik
 			else if((papan[27]=='X'&&papan[28]=='X'&&papan[24]=='X'&&papan[25]=='X'&&papan[26]=='X') || 
 			(papan[27]=='O'&&papan[28]=='O'&&papan[24]=='O'&&papan[25]=='O'&&papan[26]=='O'))
 		return 1;
-	//baris5
+	//b5
 			else if((papan[29]=='X'&&papan[30]=='X'&&papan[31]=='X'&&papan[32]=='X'&&papan[33]=='X') || 
 			(papan[29]=='O'&&papan[30]=='O'&&papan[31]=='O'&&papan[32]=='O'&&papan[33]=='O'))
 		return 1;
@@ -809,7 +868,7 @@ int cekwin3(){  // untuk mengecek kemenangan papan 7x7 secara horizontal, vertik
 			else if((papan[34]=='X'&&papan[35]=='X'&&papan[31]=='X'&&papan[32]=='X'&&papan[33]=='X') || 
 			(papan[34]=='O'&&papan[35]=='O'&&papan[31]=='O'&&papan[32]=='O'&&papan[33]=='O'))
 		return 1;
-	//baris6
+	//b6
 		else if((papan[36]=='X'&&papan[37]=='X'&&papan[38]=='X'&&papan[39]=='X'&&papan[40]=='X') || 
 			(papan[36]=='O'&&papan[37]=='O'&&papan[38]=='O'&&papan[39]=='O'&&papan[40]=='O'))
 		return 1;
@@ -819,7 +878,7 @@ int cekwin3(){  // untuk mengecek kemenangan papan 7x7 secara horizontal, vertik
 			else if((papan[41]=='X'&&papan[42]=='X'&&papan[38]=='X'&&papan[39]=='X'&&papan[40]=='X') || 
 			(papan[41]=='O'&&papan[42]=='O'&&papan[38]=='O'&&papan[39]=='O'&&papan[40]=='O'))
 		return 1;
-	//baris7
+	//b7
 			else if((papan[43]=='X'&&papan[44]=='X'&&papan[45]=='X'&&papan[46]=='X'&&papan[47]=='X') || 
 			(papan[43]=='O'&&papan[44]=='O'&&papan[45]=='O'&&papan[46]=='O'&&papan[47]=='O'))
 		return 1;
@@ -829,37 +888,27 @@ int cekwin3(){  // untuk mengecek kemenangan papan 7x7 secara horizontal, vertik
 			else if((papan[48]=='X'&&papan[49]=='X'&&papan[45]=='X'&&papan[46]=='X'&&papan[47]=='X') || 
 			(papan[48]=='O'&&papan[49]=='O'&&papan[45]=='O'&&papan[46]=='O'&&papan[47]=='O'))
 		return 1;
-		
-	//diagonal 1 kanan atas ke kiri bawah
+	//d1
 	else if((papan[5]=='X'&&papan[11]=='X'&&papan[17]=='X'&&papan[23]=='X'&&papan[27]=='X') || 
 			(papan[5]=='O'&&papan[11]=='O'&&papan[17]=='O'&&papan[23]=='O'&&papan[27]=='O'))
 		return 1;
 	else if((papan[6]=='X'&&papan[12]=='X'&&papan[18]=='X'&&papan[24]=='X'&&papan[30]=='X') || 
 			(papan[6]=='O'&&papan[12]=='O'&&papan[18]=='O'&&papan[24]=='O'&&papan[30]=='O'))
 		return 1;
-	else if((papan[36]=='X'&&papan[12]=='X'&&papan[18]=='X'&&papan[24]=='X'&&papan[30]=='X') || 
+		else if((papan[36]=='X'&&papan[12]=='X'&&papan[18]=='X'&&papan[24]=='X'&&papan[30]=='X') || 
 			(papan[36]=='O'&&papan[12]=='O'&&papan[18]=='O'&&papan[24]=='O'&&papan[30]=='O'))
 		return 1;
-	else if((papan[7]=='X'&&papan[13]=='X'&&papan[19]=='X'&&papan[25]=='X'&&papan[31]=='X') || 
+		else if((papan[7]=='X'&&papan[13]=='X'&&papan[19]=='X'&&papan[25]=='X'&&papan[31]=='X') || 
 			(papan[7]=='O'&&papan[13]=='O'&&papan[19]=='O'&&papan[25]=='O'&&papan[31]=='O'))
 		return 1;
-	else if((papan[37]=='X'&&papan[13]=='X'&&papan[19]=='X'&&papan[25]=='X'&&papan[31]=='X') || 
+		else if((papan[37]=='X'&&papan[13]=='X'&&papan[19]=='X'&&papan[25]=='X'&&papan[31]=='X') || 
 			(papan[37]=='O'&&papan[13]=='O'&&papan[19]=='O'&&papan[25]=='O'&&papan[31]=='O'))
 		return 1;
-	else if((papan[37]=='X'&&papan[43]=='X'&&papan[19]=='X'&&papan[25]=='X'&&papan[31]=='X') || 
+			else if((papan[37]=='X'&&papan[43]=='X'&&papan[19]=='X'&&papan[25]=='X'&&papan[31]=='X') || 
 			(papan[37]=='O'&&papan[43]=='O'&&papan[19]=='O'&&papan[25]=='O'&&papan[31]=='O'))
 		return 1;
-	else if((papan[14]=='X'&&papan[20]=='X'&&papan[26]=='X'&&papan[32]=='X'&&papan[38]=='X') || 
-			(papan[14]=='O'&&papan[20]=='O'&&papan[26]=='O'&&papan[32]=='O'&&papan[38]=='O'))
-		return 1;
-	else if((papan[20]=='X'&&papan[26]=='X'&&papan[32]=='X'&&papan[38]=='X'&&papan[44]=='X') || 
-			(papan[20]=='O'&&papan[26]=='O'&&papan[32]=='O'&&papan[38]=='O'&&papan[44]=='O'))
-		return 1;	
-	else if((papan[21]=='X'&&papan[27]=='X'&&papan[33]=='X'&&papan[39]=='X'&&papan[45]=='X') || 
-			(papan[21]=='O'&&papan[27]=='O'&&papan[33]=='O'&&papan[39]=='O'&&papan[45]=='O'))
-		return 1;	
 		
-	//Diagonal 2 kiri atas ke kawan bawah	
+		//DIAGONAL		
 	//
 	else if((papan[3]=='X'&&papan[11]=='X'&&papan[19]=='X'&&papan[27]=='X'&&papan[35]=='X') || 
 			(papan[3]=='O'&&papan[11]=='O'&&papan[19]=='O'&&papan[27]=='O'&&papan[35]=='O'))
@@ -893,86 +942,67 @@ int cekwin3(){  // untuk mengecek kemenangan papan 7x7 secara horizontal, vertik
 			(papan[15]=='O'&&papan[23]=='O'&&papan[31]=='O'&&papan[39]=='O'&&papan[47]=='O'))
 		return 1;
 		
-
-				
-	//draw papan 7x7
-	else if (papan[1] != '_' && papan[2] != '_' && papan[3] != '_'
-		&& papan[4] != '_' && papan[5] != '_' && papan[6] != '_'
-		&& papan[7] != '_' && papan[8] != '_' && papan[9] != '_' && papan[10] != '_'
-		&& papan[11] != '_' && papan[12] != '_' && papan[13] != '_' && papan[14] != '_'
-		&& papan[15] != '_' && papan[16] != '_' && papan[17] != '_' && papan[18] != '_'
-		&& papan[19] != '_' && papan[20] != '_' && papan[21] != '_' && papan[22] != '_'
-		&& papan[23] != '_' && papan[24] != '_' && papan[25] != '_' && papan[26] != '_'
-		&& papan[27] != '_' && papan[28] != '_' && papan[29] != '_' && papan[30] != '_'
-		&& papan[31] != '_' && papan[32] != '_' && papan[33] != '_' && papan[34] != '_'
-		&& papan[35] != '_' && papan[36] != '_' && papan[37] != '_' && papan[38] != '_'
-		&& papan[39] != '_' && papan[40] != '_' && papan[41] != '_' && papan[43] != '_'
-		&& papan[44] != '_' && papan[45] != '_' && papan[47] != '_' && papan[49] != '_'
-		)
-		return 0;
+	//DiagonL kanan atas ke kiri bawah
+else if((papan[14]=='X'&&papan[20]=='X'&&papan[26]=='X'&&papan[32]=='X'&&papan[38]=='X') || 
+			(papan[14]=='O'&&papan[20]=='O'&&papan[26]=='O'&&papan[32]=='O'&&papan[38]=='O'))
+		return 1;
+else if((papan[20]=='X'&&papan[26]=='X'&&papan[32]=='X'&&papan[38]=='X'&&papan[44]=='X') || 
+			(papan[20]=='O'&&papan[26]=='O'&&papan[32]=='O'&&papan[38]=='O'&&papan[44]=='O'))
+		return 1;
+//		
+else if((papan[21]=='X'&&papan[27]=='X'&&papan[33]=='X'&&papan[39]=='X'&&papan[45]=='X') || 
+			(papan[21]=='O'&&papan[27]=='O'&&papan[33]=='O'&&papan[39]=='O'&&papan[45]=='O'))
+		return 1;
+		
+		
+		
+		
+		//draw			
+		else if (papan[1] != '_' && papan[2] != '_' && papan[3] != '_'                //kondisi draw papan 7x7
+			&& papan[4] != '_' && papan[5] != '_' && papan[6] != '_'
+			&& papan[7] != '_' && papan[8] != '_' && papan[9] != '_' && papan[10] != '_'
+			&& papan[11] != '_' && papan[12] != '_' && papan[13] != '_' && papan[14] != '_'
+			&& papan[15] != '_' && papan[16] != '_' && papan[17] != '_' && papan[18] != '_'
+			&& papan[19] != '_' && papan[20] != '_' && papan[21] != '_' && papan[22] != '_'
+			&& papan[23] != '_' && papan[24] != '_' && papan[25] != '_' && papan[26] != '_'
+			&& papan[27] != '_' && papan[28] != '_' && papan[29] != '_' && papan[30] != '_'
+			&& papan[31] != '_' && papan[32] != '_' && papan[33] != '_' && papan[34] != '_'
+			&& papan[35] != '_' && papan[36] != '_' && papan[37] != '_' && papan[38] != '_'
+			&& papan[39] != '_' && papan[40] != '_' && papan[41] != '_' && papan[43] != '_'
+			&& papan[44] != '_' && papan[45] != '_' && papan[47] != '_' && papan[49] != '_'
+			)
+			return 0;
     	else
          return -1;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	//draw
+//		else if (papan[1] != '1' && papan[2] != '2' && papan[3] != '3'
+//			&& papan[4] != '4' && papan[5] != '5' && papan[6] != '6'
+//			&& papan[7] != '7' && papan[8] != '8' && papan[9] != '9' && papan[10] != '10'
+//			&& papan[11] != '11' && papan[12] != '12' && papan[13] != '13' && papan[14] != '14'
+//			&& papan[15] != '15' && papan[16] != '16' && papan[17] != '17' && papan[18] != '18'
+//			&& papan[19] != '19' && papan[20] != '20' && papan[21] != '21' && papan[22] != '22'
+//			&& papan[23] != '23' && papan[24] != '24' && papan[25] != '25' && papan[26] != '26'
+//			&& papan[27] != '27' && papan[28] != '28' && papan[29] != '29' && papan[30] != '30'
+//			&& papan[31] != '31' && papan[32] != '32' && papan[33] != '33' && papan[34] != '34'
+//			&& papan[35] != '35' && papan[36] != '36' && papan[37] != '37' && papan[38] != '38'
+//			&& papan[39] != '39' && papan[40] != '40' && papan[41] != '42' && papan[43] != '44'
+//			&& papan[44] != '44' && papan[45] != '46' && papan[47] != '48' && papan[49] != '49'
+//			)
+//			return 0;
     	}
 
-
-//Print papan 7x7
-void board3(){
-	
-	system("cls");
-	printf("\n\n\tTic Tac Toe\n\n");
-   	printf("Player 1 (X)  -  Player 2 (O)\n\n\n");  									// sebagai penanda player mana yang X atau O
-   	printf("Skor Player 1 (X) : %d -  Skor Player 2 (O) : %d\n\n\n", skor1, skor2);		// untuk menampilkan skor palyer
-   					 
-	printf("====================================   PAPAN PERMAINAN   ====================================\n\n");
-	printf("||===========||===========||===========||===========||===========||===========||===========||\n");
-	printf("||1          ||2          ||3          ||4          ||5          ||6          ||7          ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"		// untuk menyimpan tanda X atau O
-	,papan[1],papan[2],papan[3],papan[4],papan[5],papan[6],papan[7]); 													
-	printf("||           ||           ||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||===========||===========||\n");
-	printf("||8          ||9          ||10         ||11         ||12         ||13         ||14         ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
-	,papan[8],papan[8],papan[10],papan[11],papan[12],papan[13],papan[14]);
-	printf("||           ||           ||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||===========||===========||\n");
-	printf("||15         ||16         ||17         ||18         ||19         ||20         ||21         ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
-	,papan[15],papan[16],papan[17],papan[18],papan[19],papan[20],papan[21]);
-	printf("||           ||           ||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||===========||===========||\n");
-	printf("||22         ||23         ||24         ||25         ||26         ||27         ||28         ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
-	,papan[22],papan[23],papan[24],papan[25],papan[26],papan[27],papan[28]);
-	printf("||           ||           ||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||===========||===========||\n");
-	printf("||29         ||30         ||31         ||32         ||33         ||34         ||35         ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
-	,papan[29],papan[30],papan[31],papan[32],papan[33],papan[34],papan[35]);
-	printf("||           ||           ||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||===========||===========||\n");
-	printf("||36         ||37         ||38         ||39         ||40         ||41         ||42         ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
-	,papan[36],papan[37],papan[38],papan[39],papan[40],papan[41],papan[42]);
-	printf("||           ||           ||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||===========||===========||\n");
-	printf("||43         ||44         ||45         ||46         ||47         ||48         ||49         ||\n");
-	printf("||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||     %c     ||\n"
-	,papan[43],papan[44],papan[45],papan[46],papan[47],papan[48],papan[49]);
-	printf("||           ||           ||           ||           ||           ||           ||           ||\n");
-	printf("||===========||===========||===========||===========||===========||===========||===========||\n\n\n");
-}
-
-//Reset papan 7x7
-void resetGrid3(){   //untuk mereset grid jika game pertama selesai
-    char c='_';
-    int i;
-
-    for(i=0; i<50; i++){
-        square[i]=c;
-    }
-}
-
-//mengisi karakter pada papan 7x7
 void isi3(){              // untuk mengisi karakter pada papan 7x7
     char c='_';
     int i;
